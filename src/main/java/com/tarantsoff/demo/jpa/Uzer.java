@@ -5,6 +5,8 @@ import java.util.Collection;
 
 /**
  * Created by ozzy on 12/8/16.
+ * Just this version has biderectional relationship between entities which cause problem when fetch item
+ * during REST request processing like infinity loop calls to getters
  */
 @Entity
 public class Uzer {
@@ -39,10 +41,8 @@ public class Uzer {
 
         Uzer uzer = (Uzer) o;
 
-        if (id != uzer.id) return false;
-        if (login != null ? !login.equals(uzer.login) : uzer.login != null) return false;
+        return id == uzer.id && !(login != null ? !login.equals(uzer.login) : uzer.login != null);
 
-        return true;
     }
 
     @Override
