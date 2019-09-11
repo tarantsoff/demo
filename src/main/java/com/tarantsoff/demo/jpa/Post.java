@@ -11,7 +11,6 @@ public class Post {
     private int id;
     private String title;
     private String text;
-    private Collection<Comment> comments;
     private Uzer author;
 
     @Id
@@ -66,15 +65,8 @@ public class Post {
         return result;
     }
 
-    @OneToMany(mappedBy = "post")
-    public Collection<Comment> getComments() {
-        return comments;
-    }
 
-    public void setComments(Collection<Comment> comments) {
-        this.comments = comments;
-    }
-
+/*
     @ManyToOne
     @JoinColumn(name = "author_id", referencedColumnName = "id", nullable = false)
     public Uzer getAuthor() {
@@ -84,4 +76,5 @@ public class Post {
     public void setAuthor(Uzer author) {
         this.author = author;
     }
+*/
 }

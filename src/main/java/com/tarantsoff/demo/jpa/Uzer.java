@@ -52,7 +52,8 @@ public class Uzer {
         return result;
     }
 
-    @OneToMany(mappedBy = "author")
+    @OneToMany()
+    @JoinColumn(name = "author_id")
     public Collection<Post> getPosts() {
         return posts;
     }
