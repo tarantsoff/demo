@@ -14,8 +14,6 @@ public class Heap {
         userCityMapping.put("Jesse", "California");
 
         System.out.println("=== Iterating over a LinkedHashMap using Java 8 forEach and lambda ===");
-        userCityMapping.forEach((user, city) -> {
-            System.out.println(user + " => " + city);
-        });
+        userCityMapping.forEach((user, city) -> System.out.println(user + " => " + city));
     }
 }
